@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Titillium+Web:wght@900&display=swap');
+
+$font-family-title : 'Titillium Web',
+cursive,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+
+$font-family-text : 'Manrope',
+sans-serif,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji";
+$font-family-monospace: 'Work Sans',
+"Liberation Mono",
+"Courier New",
+monospace;
+
+
+// MIXINS
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+} 
+
+@mixin hover-detect {
+    @media not all and (pointer: coarse) {
+
+        @content;
+
+    }
+} 
+ 
+
+$action : #2b1125;
+$white : rgb(255, 255, 255);
+$primary : #fef6f9;
+$black-font : #3e3e3e;
