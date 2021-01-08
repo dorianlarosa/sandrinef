@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Titillium+Web:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Sorts+Mill+Goudy&family=Raleway:wght@200;300;400;600;700&display=swap');
 
-$font-family-title : 'Titillium Web',
+$font-family-title : 'Mr De Haviland',
 cursive,
 "Segoe UI",
 Roboto,
@@ -9,12 +9,23 @@ Arial,
 "Noto Sans",
 sans-serif,
 "Apple Color Emoji",
+"Segoe UI Emoji", 
+"Segoe UI Symbol",
+"Noto Color Emoji";
+
+$font-family-text : "Sorts Mill Goudy",
+Roboto,
+"Helvetica Neue",
+Arial,
+"Noto Sans",
+sans-serif,
+"Apple Color Emoji",
 "Segoe UI Emoji",
 "Segoe UI Symbol",
 "Noto Color Emoji";
 
-$font-family-text : 'Manrope',
-sans-serif,
+
+$font-family-sans-serif: 'Raleway',
 "Segoe UI",
 Roboto,
 "Helvetica Neue",
@@ -25,10 +36,6 @@ sans-serif,
 "Segoe UI Emoji",
 "Segoe UI Symbol",
 "Noto Color Emoji";
-$font-family-monospace: 'Work Sans',
-"Liberation Mono",
-"Courier New",
-monospace;
 
 
 // MIXINS
@@ -38,7 +45,7 @@ monospace;
             @content;
         }
     }
-} 
+}
 
 @mixin hover-detect {
     @media not all and (pointer: coarse) {
@@ -46,8 +53,8 @@ monospace;
         @content;
 
     }
-} 
- 
+}
+
 
 $action : #2b1125;
 $white : rgb(255, 255, 255);

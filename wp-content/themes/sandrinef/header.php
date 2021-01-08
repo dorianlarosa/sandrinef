@@ -15,9 +15,9 @@
         <div class="container-fluid top-navbar">
             <div class="container content-top-navbar">
                 <div class="contact-infos">
-                    <span class="mail">Contactez-moi : adresse@domaine.com</span>
-                    <span class="separate-contact"> | </span>
-                    <span class="contact-tel">Appellez-moi : 06 29 35 66 33</span>
+                    <!-- <span class="mail">Contactez-moi : adresse@domaine.com</span>
+                    <span class="separate-contact"> | </span> -->
+                    <span class="contact-tel">Appellez-moi : <?php the_field('numero_de_telephone', 'option'); ?></span>
                 </div>
                 <div class="socials-network">
                     <a href="" class="social-link">
@@ -49,10 +49,11 @@
                     <span class="bar"></span>
                 </div>
                 <ul class="nav" id="primary-nav">
-                    <li class="nav-item"><a href="#" class="nav-link">Accueil</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link active">Accueil</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">A propos</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Massages</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="#" class="btn nav-link__btn">Réserver</a></li>
                 </ul>
             </nav>
         </div>

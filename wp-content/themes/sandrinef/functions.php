@@ -146,6 +146,15 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 remove_action('template_redirect', 'rest_output_link_header', 10);
 
 
+
+// REMOVE POST MENU ADMIN
+function remove_posts_menu()
+{
+  remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'remove_posts_menu');
+
+
 /******
  * enqueue script
  ******/
@@ -168,13 +177,14 @@ add_filter('show_admin_bar', '__return_false');
 //////////
 
 // logo personalisation
-function wpc_theme_support() {
-	add_theme_support('custom-logo', array(
-		'flex-height' => true,
-		'flex-width'  => true,
-	));
+function wpc_theme_support()
+{
+  add_theme_support('custom-logo', array(
+    'flex-height' => true,
+    'flex-width'  => true,
+  ));
 }
-add_action('after_setup_theme','wpc_theme_support');
+add_action('after_setup_theme', 'wpc_theme_support');
 
 ///////////
 // ENQUEUE SCRIPT
@@ -200,3 +210,152 @@ function vcn_enqueue_script()
 
 
 add_action('wp_enqueue_scripts', 'vcn_enqueue_script', 11);
+
+
+
+/////////////
+// CPT
+////////////
+
+// Register Custom Post Type
+function custom_post_type()
+{
+
+  // MASSAGES
+  $labelsMassages = array(
+    'name'                  => 'Massages',
+    'singular_name'         => 'Massage',
+    'menu_name'             => __('Massages', 'text_domain'),
+    'name_admin_bar'        => __('Massages', 'text_domain'),
+    'archives'              => __('Item Archives', 'text_domain'),
+    'attributes'            => __('Item Attributes', 'text_domain'),
+    'parent_item_colon'     => __('Parent Item:', 'text_domain'),
+    'all_items'             => __('Tout les massages', 'text_domain'),
+    'add_new_item'          => __('Ajouter un nouveau massage', 'text_domain'),
+    'add_new'               => __('Ajouter', 'text_domain'),
+    'new_item'              => __('Nouveau massage', 'text_domain'),
+    'edit_item'             => __('Modifier le massage', 'text_domain'),
+    'update_item'           => __('Mettre à jour le massage', 'text_domain'),
+    'view_item'             => __('Voir le massage', 'text_domain'),
+    'view_items'            => __('Voir les massages', 'text_domain'),
+    'search_items'          => __('Chercher un massage', 'text_domain'),
+    'not_found'             => __('Not found', 'text_domain'),
+    'not_found_in_trash'    => __('Not found in Trash', 'text_domain'),
+    'featured_image'        => __('Featured Image', 'text_domain'),
+    'set_featured_image'    => __('Set featured image', 'text_domain'),
+    'remove_featured_image' => __('Remove featured image', 'text_domain'),
+    'use_featured_image'    => __('Use as featured image', 'text_domain'),
+    'insert_into_item'      => __('Insert into item', 'text_domain'),
+    'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+    'items_list'            => __('Items list', 'text_domain'),
+    'items_list_navigation' => __('Items list navigation', 'text_domain'),
+    'filter_items_list'     => __('Filter items list', 'text_domain'),
+  );
+  $argsMassages = array(
+    'label'                 => __('Massage', 'text_domain'),
+    'description'           => __('Services proposé', 'text_domain'),
+    'labels'                => $labelsMassages,
+    'supports'              => array('title', 'page-attributes'),
+    'taxonomies'            => array(),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'menu_icon'             => 'dashicons-universal-access',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => false,
+    'capability_type'       => 'page',
+  );
+  register_post_type('massages', $argsMassages);
+
+
+  // AVANTAGES
+  $labelsAvantages = array(
+    'name'                  => 'Avantages',
+    'singular_name'         => 'Avantage',
+    'menu_name'             => __('Avantages', 'text_domain'),
+    'name_admin_bar'        => __('Avantages', 'text_domain'),
+    'archives'              => __('Item Archives', 'text_domain'),
+    'attributes'            => __('Item Attributes', 'text_domain'),
+    'parent_item_colon'     => __('Parent Item:', 'text_domain'),
+    'all_items'             => __('Tout les avantages', 'text_domain'),
+    'add_new_item'          => __('Ajouter un nouveau avantage', 'text_domain'),
+    'add_new'               => __('Ajouter', 'text_domain'),
+    'new_item'              => __('Nouveau avantage', 'text_domain'),
+    'edit_item'             => __('Modifier l\'avantage', 'text_domain'),
+    'update_item'           => __('Mettre à jour l\'avantage', 'text_domain'),
+    'view_item'             => __('Voir l\'avantage', 'text_domain'),
+    'view_items'            => __('Voir les avantages', 'text_domain'),
+    'search_items'          => __('Chercher un avantage', 'text_domain'),
+    'not_found'             => __('Not found', 'text_domain'),
+    'not_found_in_trash'    => __('Not found in Trash', 'text_domain'),
+    'featured_image'        => __('Featured Image', 'text_domain'),
+    'set_featured_image'    => __('Set featured image', 'text_domain'),
+    'remove_featured_image' => __('Remove featured image', 'text_domain'),
+    'use_featured_image'    => __('Use as featured image', 'text_domain'),
+    'insert_into_item'      => __('Insert into item', 'text_domain'),
+    'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+    'items_list'            => __('Items list', 'text_domain'),
+    'items_list_navigation' => __('Items list navigation', 'text_domain'),
+    'filter_items_list'     => __('Filter items list', 'text_domain'),
+  );
+  $argsAvantages = array(
+    'label'                 => __('Avantage', 'text_domain'),
+    'description'           => __('Bienfaits et avantages', 'text_domain'),
+    'labels'                => $labelsAvantages,
+    'supports'              => array('title', 'page-attributes'),
+    'taxonomies'            => array(),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'menu_icon'             => 'dashicons-heart',
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => false,
+    'capability_type'       => 'page',
+  );
+  register_post_type('avantages', $argsAvantages);
+}
+add_action('init', 'custom_post_type', 0);
+
+
+
+//////////
+// MENU PAGE ADMIN
+//////////
+
+
+
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'page_title'    => 'Informations de contact',
+    'menu_title'    => 'Contact',
+    'menu_slug'     => 'information',
+    'capability'    => 'edit_posts',
+    'position'      => 8,
+    'icon_url'      => 'dashicons-text-page',
+    'redirect'      => false,
+  ));
+}
+
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page(array(
+    'page_title'    => 'Informations de l\'événement',
+    'menu_title'    => 'Evénement',
+    'menu_slug'     => 'evenement-info',
+    'capability'    => 'edit_posts',
+    'position'      => 7,
+    'icon_url'      => 'dashicons-calendar-alt',
+    'redirect'      => false,
+  ));
+}
