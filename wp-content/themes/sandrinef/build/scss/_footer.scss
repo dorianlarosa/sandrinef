@@ -1,0 +1,116 @@
+.footer {
+    padding-top: 110px;
+    position: relative;
+
+    &__logo-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list-contact {
+        margin-top: 4rem;
+
+        .row {
+            justify-content: center;
+
+            .col-footer {
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    margin-top: 3rem;
+                }
+
+                &:nth-child(2) {
+                    @include media-breakpoint-up(md) {
+                        margin-top: 0;
+                    }
+                }
+
+                &:nth-child(3) {
+
+
+                    @include media-breakpoint-up(lg) {
+                        margin-top: 0;
+                    }
+                }
+
+                &__title {
+                    text-align: center;
+                    font-family: $font-family-sans-serif;
+                    font-weight: 600;
+                }
+
+                &__list {
+                    margin-top: 2rem;
+
+                    li {
+                        font-family: $font-family-text;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-size: 1.1rem;
+
+                        &:nth-child(2) {
+                            margin-top: 1rem;
+
+                        }
+
+                        span {
+                            &:nth-child(2) {
+                                margin-top: .2rem;
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom-footer {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column-reverse;
+        font-family: $font-family-text;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+
+
+            }
+        }
+
+        .container-links {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: $font-family-text;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+
+            }
+        }
+    }
+
+    .grid-dots {
+        bottom: 0;
+        left: 0;
+        transform: translate(-47%, 23%);
+        opacity: 0;
+
+        @include media-breakpoint-up(md) {
+            opacity:1;
+        }
+    }
+}

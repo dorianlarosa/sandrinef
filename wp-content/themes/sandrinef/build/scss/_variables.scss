@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Sorts+Mill+Goudy&family=Raleway:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=EB+Garamond:wght@400;600&family=Raleway:wght@200;300;400;600;700&display=swap');
 
 $font-family-title : 'Mr De Haviland',
 cursive,
@@ -10,10 +10,10 @@ Arial,
 sans-serif,
 "Apple Color Emoji",
 "Segoe UI Emoji", 
-"Segoe UI Symbol",
+"Segoe UI Symbol", 
 "Noto Color Emoji";
 
-$font-family-text : "Sorts Mill Goudy",
+$font-family-text : 'EB Garamond',
 Roboto,
 "Helvetica Neue",
 Arial,
@@ -62,3 +62,5 @@ $primary : #fef6f9;
 $black-font : #3e3e3e;
 $grey : #f8f8f8;
 $dark-grey: #747474;
+
+$box-shadow-1: 0 0 30px #00000038;;

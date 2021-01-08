@@ -34,126 +34,132 @@
         </div>
     </section>
 
-    <section id="services-section" class="container section">
-        <h2 class="section__title">Services</h2>
-        <img class="divider" src="<?= get_template_directory_uri() ?>/images/divider.png" alt="">
-        <p class="section__subtitle">
-            une relaxation suivant vos envies
-        </p>
-        <p class="section__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia qui culpa magni! Molestias dicta omnis, eum nihil voluptas accusantium, expedita inventore neque ipsum suscipit voluptatem dolorum unde consequuntur illo officia!
-        </p>
+    <section id="services-section" class="container-fluid section">
+        <div class="container">
 
-        <div class="list-items">
-            <?php get_template_part('parts/grid-dots'); ?>
-            <div class="row">
+            <h2 class="section__title">Services</h2>
+            <img class="divider" src="<?= get_template_directory_uri() ?>/images/divider.png" alt="">
+            <p class="section__subtitle">
+                une relaxation suivant vos envies
+            </p>
+            <p class="section__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia qui culpa magni! Molestias dicta omnis, eum nihil voluptas accusantium, expedita inventore neque ipsum suscipit voluptatem dolorum unde consequuntur illo officia!
+            </p>
 
-                <?php
-                /**
-                 * Setup query to show the ‘services’ post type with ‘8’ posts.
-                 * Output the title with an excerpt.
-                 */
-                $argsServices = array(
-                    'post_type' => 'massages',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC'
-                );
+            <div class="list-items">
+                <?php get_template_part('parts/grid-dots'); ?>
+                <div class="row">
 
-                $services = new WP_Query($argsServices);
+                    <?php
+                    /**
+                     * Setup query to show the ‘services’ post type with ‘8’ posts.
+                     * Output the title with an excerpt.
+                     */
+                    $argsServices = array(
+                        'post_type' => 'massages',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC'
+                    );
 
-                while ($services->have_posts()) : $services->the_post();
-                ?>
-                    <?php $statusService = get_field("statut_du_massage"); ?>
+                    $services = new WP_Query($argsServices);
 
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 item <?php if ($statusService == 'formation_en_cours') echo 'not-available'; ?>">
-                        <div class="item-content">
+                    while ($services->have_posts()) : $services->the_post();
+                    ?>
+                        <?php $statusService = get_field("statut_du_massage"); ?>
 
-                            <span class="btn btn__small btn-not-available">Formation en cours</span>
-                            <?php $imageService = get_field("image"); ?>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 item <?php if ($statusService == 'formation_en_cours') echo 'not-available'; ?>">
+                            <div class="item-content">
 
-                            <img class="item-content__image" src="<?= $imageService["sizes"]["medium_large"]; ?>" alt="Illustration du massage" height="512" width="768">
+                                <span class="btn btn__small btn-not-available">Formation en cours</span>
+                                <?php $imageService = get_field("image"); ?>
 
-                            <h3 class="item-content__title">
-                                <?= the_title(); ?>
-                            </h3>
+                                <img class="item-content__image" src="<?= $imageService["sizes"]["medium_large"]; ?>" alt="Illustration du massage" height="512" width="768">
 
-                            <p class="item-content__text">
-                                <?= the_field("resume"); ?>
-                            </p>
+                                <h3 class="item-content__title">
+                                    <?= the_title(); ?>
+                                </h3>
 
-                            <div class="container-btn item-content__container-btn">
-                                <a href="/massages/#<?= get_post_field('post_name', get_the_ID()); ?>" class="btn btn__small">En savoir plus</a>
+                                <p class="item-content__text">
+                                    <?= the_field("resume"); ?>
+                                </p>
+
+                                <div class="container-btn item-content__container-btn">
+                                    <a href="/massages/#<?= get_post_field('post_name', get_the_ID()); ?>" class="btn btn__small">En savoir plus</a>
+                                </div>
                             </div>
+
                         </div>
 
-                    </div>
-
-                <?php
-                endwhile;
-                wp_reset_postdata();
-                ?>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
             </div>
         </div>
+
     </section>
 
 
-    <section id="avantages-section" class="container section">
-        <h2 class="section__title">Bienfaits et avantages</h2>
-        <img class="divider" src="<?= get_template_directory_uri() ?>/images/divider.png" alt="">
-        <p class="section__subtitle">
-            Optez pour des methodes douces et naturelles
-        </p>
-        <p class="section__text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia qui culpa magni! Molestias dicta omnis, eum nihil voluptas accusantium, expedita inventore neque ipsum suscipit voluptatem dolorum unde consequuntur illo officia!
-        </p>
+    <section id="avantages-section" class="container-fluid section">
+        <div class="container">
+            <h2 class="section__title">Bienfaits et avantages</h2>
+            <img class="divider" src="<?= get_template_directory_uri() ?>/images/divider.png" alt="">
+            <p class="section__subtitle">
+                Optez pour des methodes douces et naturelles
+            </p>
+            <p class="section__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia qui culpa magni! Molestias dicta omnis, eum nihil voluptas accusantium, expedita inventore neque ipsum suscipit voluptatem dolorum unde consequuntur illo officia!
+            </p>
 
-        <div class="list-items">
+            <div class="list-items">
 
-            <?php get_template_part('parts/grid-dots'); ?>
+                <?php get_template_part('parts/grid-dots'); ?>
 
-            <div class="row">
-                <?php
-                /**
-                 * Setup query to show the ‘services’ post type with ‘8’ posts.
-                 * Output the title with an excerpt.
-                 */
-                $argsAvantages = array(
-                    'post_type' => 'avantages',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC'
-                );
+                <div class="row">
+                    <?php
+                    /**
+                     * Setup query to show the ‘services’ post type with ‘8’ posts.
+                     * Output the title with an excerpt.
+                     */
+                    $argsAvantages = array(
+                        'post_type' => 'avantages',
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1,
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC'
+                    );
 
-                $avantages = new WP_Query($argsAvantages);
+                    $avantages = new WP_Query($argsAvantages);
 
-                while ($avantages->have_posts()) : $avantages->the_post();
-                ?>
+                    while ($avantages->have_posts()) : $avantages->the_post();
+                    ?>
 
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="item-content">
+                        <div class="col-12 col-md-6 col-lg-4 item">
+                            <div class="item-content">
 
-                            <?php $imageAvantage = get_field("image"); ?>
+                                <?php $imageAvantage = get_field("image"); ?>
 
-                            <img class="item-content__image" src="<?= $imageAvantage["sizes"]["medium_large"]; ?>" alt="Illustration du massage" height="512" width="768">
+                                <img class="item-content__image" src="<?= $imageAvantage["sizes"]["medium_large"]; ?>" alt="Illustration du massage" height="512" width="768">
 
-                            <h3 class="item-content__title">
-                                <?= the_title(); ?>
-                            </h3>
+                                <h3 class="item-content__title">
+                                    <?= the_title(); ?>
+                                </h3>
 
-                            <p class="item-content__text">
-                                <?= the_field("texte"); ?>
-                            </p>
+                                <p class="item-content__text">
+                                    <?= the_field("texte"); ?>
+                                </p>
+                            </div>
+
                         </div>
 
-                    </div>
-
-                <?php
-                endwhile;
-                wp_reset_postdata();
-                ?>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
             </div>
         </div>
     </section>
@@ -190,6 +196,69 @@
 
         <?php } ?>
     </section>
+
+    <section id="review-section" class="container-fluid section">
+        <div class="container">
+
+            <h2 class="section__title">Avis clients</h2>
+            <img class="divider" src="<?= get_template_directory_uri() ?>/images/divider.png" alt="">
+            <p class="section__subtitle">
+                Ce que les clients en disent
+            </p>
+            <div class="list-review">
+
+                <?php get_template_part('parts/grid-dots'); ?>
+                <?php get_template_part('parts/grid-dots'); ?>
+
+                <div class="row">
+                    <?php
+                    /**
+                     * Setup query to show the ‘services’ post type with ‘8’ posts.
+                     * Output the title with an excerpt.
+                     */
+                    $argsAvantages = array(
+                        'post_type' => 'review',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 2,
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC'
+                    );
+
+                    $avantages = new WP_Query($argsAvantages);
+
+                    while ($avantages->have_posts()) : $avantages->the_post();
+                    ?>
+
+                        <div class="col-12 col-md-6 item-review">
+                            <div class="item-review-content">
+
+                                <p class="item-review-content__text">
+                                    "<?= the_field("avis"); ?>"
+                                </p>
+
+                                <p class="item-review-content__name">
+                                    <?= the_field("nom"); ?>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <?php get_template_part('parts/cta-section'); ?>
+
+
+
 </div>
 
 <?php get_footer(); ?>

@@ -39,16 +39,22 @@ ul {
 
 a {
     text-decoration: none;
+    color: $black-font;
 }
 
 p {
     font-size: 1rem;
     font-family: $font-family-text;
+    color: $black-font;
 
     @include media-breakpoint-up(lg) {
         font-size: 1rem;
     }
 
+}
+
+span {
+    color: $black-font;
 }
 
 .container-fluid {
@@ -81,12 +87,10 @@ p {
 //////////////////////
 // SECTION
 ///////////////////////
-
-
-
 .section {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    overflow: hidden; 
 
     &.header {
         padding-top: 70px;
@@ -160,6 +164,11 @@ p {
 // COMPOSANT
 ///////////////////////
 
+// bold-text
+.bold-text {
+ font-weight:600;                               
+}
+
 // Grid dots
 .grid-dots {
     display: grid;
@@ -218,7 +227,7 @@ p {
 
     @include media-breakpoint-up(md) {
         padding: 12px 20px;
-        font-size: .8rem; 
+        font-size: .8rem;
     }
 
     &__light {
@@ -234,8 +243,6 @@ p {
 
 
 // ITEM
-
-
 .list-items {
 
     margin-top: 5rem;
@@ -254,6 +261,24 @@ p {
                 flex-direction: column;
                 align-items: center;
 
+                &__title,
+                &__text {
+
+                    @include media-breakpoint-up(md) {
+                        padding: 0 30px;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 0 10px;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        padding: 0 40px;
+                    }
+
+                }
+
+
                 &__image {
                     width: 100%;
                     height: 290px;
@@ -266,11 +291,19 @@ p {
                     font-size: 1.2rem;
                     font-weight: 600;
                     margin-top: 2.5rem;
+
+                    @include media-breakpoint-up(sm) {
+                        font-size: 1rem;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 &__text {
                     text-align: center;
-                    margin-top: 2.5rem;
+                    margin-top: 2rem;
                 }
 
                 &__container-btn {

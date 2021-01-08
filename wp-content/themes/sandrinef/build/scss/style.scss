@@ -39,16 +39,22 @@ ul {
 
 a {
     text-decoration: none;
+    color: $black-font;
 }
 
 p {
     font-size: 1rem;
     font-family: $font-family-text;
+    color: $black-font;
 
     @include media-breakpoint-up(lg) {
         font-size: 1rem;
     }
 
+}
+
+span {
+    color: $black-font;
 }
 
 .container-fluid {
@@ -81,12 +87,10 @@ p {
 //////////////////////
 // SECTION
 ///////////////////////
-
-
-
 .section {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    overflow: hidden; 
 
     &.header {
         padding-top: 70px;
@@ -160,6 +164,11 @@ p {
 // COMPOSANT
 ///////////////////////
 
+// bold-text
+.bold-text {
+ font-weight:600;                               
+}
+
 // Grid dots
 .grid-dots {
     display: grid;
@@ -218,7 +227,7 @@ p {
 
     @include media-breakpoint-up(md) {
         padding: 12px 20px;
-        font-size: .8rem; 
+        font-size: .8rem;
     }
 
     &__light {
@@ -234,8 +243,6 @@ p {
 
 
 // ITEM
-
-
 .list-items {
 
     margin-top: 5rem;
@@ -254,6 +261,24 @@ p {
                 flex-direction: column;
                 align-items: center;
 
+                &__title,
+                &__text {
+
+                    @include media-breakpoint-up(md) {
+                        padding: 0 30px;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        padding: 0 10px;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        padding: 0 40px;
+                    }
+
+                }
+
+
                 &__image {
                     width: 100%;
                     height: 290px;
@@ -266,11 +291,19 @@ p {
                     font-size: 1.2rem;
                     font-weight: 600;
                     margin-top: 2.5rem;
+
+                    @include media-breakpoint-up(sm) {
+                        font-size: 1rem;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 &__text {
                     text-align: center;
-                    margin-top: 2.5rem;
+                    margin-top: 2rem;
                 }
 
                 &__container-btn {
@@ -280,7 +313,122 @@ p {
         }
     }
 }
+.footer {
+    padding-top: 110px;
+    position: relative;
 
+    &__logo-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__list-contact {
+        margin-top: 4rem;
+
+        .row {
+            justify-content: center;
+
+            .col-footer {
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    margin-top: 3rem;
+                }
+
+                &:nth-child(2) {
+                    @include media-breakpoint-up(md) {
+                        margin-top: 0;
+                    }
+                }
+
+                &:nth-child(3) {
+
+
+                    @include media-breakpoint-up(lg) {
+                        margin-top: 0;
+                    }
+                }
+
+                &__title {
+                    text-align: center;
+                    font-family: $font-family-sans-serif;
+                    font-weight: 600;
+                }
+
+                &__list {
+                    margin-top: 2rem;
+
+                    li {
+                        font-family: $font-family-text;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-size: 1.1rem;
+
+                        &:nth-child(2) {
+                            margin-top: 1rem;
+
+                        }
+
+                        span {
+                            &:nth-child(2) {
+                                margin-top: .2rem;
+                            }
+
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom-footer {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column-reverse;
+        font-family: $font-family-text;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+
+
+            }
+        }
+
+        .container-links {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: $font-family-text;
+
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+
+            }
+        }
+    }
+
+    .grid-dots {
+        bottom: 0;
+        left: 0;
+        transform: translate(-47%, 23%);
+        opacity: 0;
+
+        @include media-breakpoint-up(md) {
+            opacity:1;
+        }
+    }
+}
 #header-home-page {
     height: 80vh;
     display: flex;
@@ -293,11 +441,12 @@ p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: white;
 
         &__adress {
             font-family: $font-family-text;
             font-size: 1.2rem;
+            color: $white;
+
         }
 
         &__title {
@@ -307,6 +456,8 @@ p {
             text-align: center;
             text-transform: uppercase;
             margin-top: 1rem;
+            color: $white;
+
 
             @include media-breakpoint-up(md) {
                 font-size: 2rem;
@@ -321,6 +472,8 @@ p {
         &__text {
             text-align: center;
             margin-top: 1rem;
+            color: $white;
+
         }
 
         &__btn {
@@ -419,6 +572,8 @@ p {
                 }
 
                 .item-content {
+
+
                     .btn-not-available {
                         display: none;
                         position: absolute;
@@ -497,6 +652,70 @@ p {
         }
     }
 
+}
+
+
+#review-section {
+    .list-review {
+        position: relative;
+        margin-top: 5rem;
+
+        .grid-dots {
+
+            z-index: -10;
+
+            &:nth-child(1) {
+                transform: translate(-35%, -65%);
+                top: 100%;
+
+
+            }
+
+            &:nth-child(2) {
+                transform: translate(-65%, -35%);
+                left: 100%;
+
+
+            }
+
+        }
+
+        .item-review {
+
+            &:nth-child(2) {
+                margin-top: 4rem;
+
+                @include media-breakpoint-up(md) {
+                    margin-top: 0;
+                }
+            }
+
+            .item-review-content {
+                padding: 40px;
+                box-shadow: $box-shadow-1;
+                background: $white;
+
+                @include media-breakpoint-up(sm) {
+                    padding: 40px 70px;
+
+                }
+
+                &__text {
+                    text-align: center;
+                    font-family: $font-family-sans-serif;
+                    font-size: .9rem;
+                    line-height: 1.6rem;
+                }
+
+                &__name {
+                    margin-top: 2rem;
+                    text-align: center;
+                    font-weight: 600;
+
+                }
+            }
+        }
+    }
 }
 .top-navbar {
     background: $grey;
@@ -732,7 +951,13 @@ p {
 
 
  
-@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Sorts+Mill+Goudy&family=Raleway:wght@200;300;400;600;700&display=swap');
+#cta-section {
+    background:$primary;
+    .container-btn {
+        margin-top:3rem;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=EB+Garamond:wght@400;600&family=Raleway:wght@200;300;400;600;700&display=swap');
 
 $font-family-title : 'Mr De Haviland',
 cursive,
@@ -744,10 +969,10 @@ Arial,
 sans-serif,
 "Apple Color Emoji",
 "Segoe UI Emoji", 
-"Segoe UI Symbol",
+"Segoe UI Symbol", 
 "Noto Color Emoji";
 
-$font-family-text : "Sorts Mill Goudy",
+$font-family-text : 'EB Garamond',
 Roboto,
 "Helvetica Neue",
 Arial,
@@ -796,3 +1021,5 @@ $primary : #fef6f9;
 $black-font : #3e3e3e;
 $grey : #f8f8f8;
 $dark-grey: #747474;
+
+$box-shadow-1: 0 0 30px #00000038;;

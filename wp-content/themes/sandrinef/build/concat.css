@@ -11,14 +11,14 @@ Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, 
 This theme, like WordPress, is lic*ensed under the GPL.
 Use it tov mhake somethi!:!ng cool, have fun, and share what you've learned with others.
 */ 
-@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Sorts+Mill+Goudy&family=Raleway:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=EB+Garamond:wght@400;600&family=Raleway:wght@200;300;400;600;700&display=swap");
 /*!
  * Bootstrap Grid v5.0.0-beta1 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Sorts+Mill+Goudy&family=Raleway:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=EB+Garamond:wght@400;600&family=Raleway:wght@200;300;400;600;700&display=swap");
 .container,
 .container-fluid,
 .container-xxl,
@@ -5462,16 +5462,22 @@ ul li {
 
 a {
   text-decoration: none;
+  color: #3e3e3e;
 }
 
 p {
   font-size: 1rem;
-  font-family: "Sorts Mill Goudy", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #3e3e3e;
 }
 @media (min-width: 992px) {
   p {
     font-size: 1rem;
   }
+}
+
+span {
+  color: #3e3e3e;
 }
 
 .container-fluid .container, .container-sm .container, .container-md .container, .container-lg .container, .container-xl .container, .container-xxl .container {
@@ -5498,8 +5504,9 @@ p {
 }
 
 .section {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  overflow: hidden;
 }
 .section.header {
   padding-top: 70px;
@@ -5545,7 +5552,7 @@ p {
   }
 }
 .section__text {
-  font-family: "Sorts Mill Goudy", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-align: center;
   margin-top: 3rem;
   max-width: 400px;
@@ -5562,6 +5569,10 @@ p {
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+}
+
+.bold-text {
+  font-weight: 600;
 }
 
 .grid-dots {
@@ -5650,6 +5661,21 @@ p {
   flex-direction: column;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .list-items .row .item .item-content__title, .list-items .row .item .item-content__text {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 992px) {
+  .list-items .row .item .item-content__title, .list-items .row .item .item-content__text {
+    padding: 0 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .list-items .row .item .item-content__title, .list-items .row .item .item-content__text {
+    padding: 0 40px;
+  }
+}
 .list-items .row .item .item-content__image {
   width: 100%;
   height: 290px;
@@ -5662,12 +5688,114 @@ p {
   font-weight: 600;
   margin-top: 2.5rem;
 }
+@media (min-width: 576px) {
+  .list-items .row .item .item-content__title {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .list-items .row .item .item-content__title {
+    font-size: 1.2rem;
+  }
+}
 .list-items .row .item .item-content__text {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 .list-items .row .item .item-content__container-btn {
   margin-top: 2.5rem;
+}
+
+.footer {
+  padding-top: 110px;
+  position: relative;
+}
+.footer__logo-container {
+  display: flex;
+  justify-content: center;
+}
+.footer__list-contact {
+  margin-top: 4rem;
+}
+.footer__list-contact .row {
+  justify-content: center;
+}
+.footer__list-contact .row .col-footer:nth-child(2), .footer__list-contact .row .col-footer:nth-child(3) {
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .footer__list-contact .row .col-footer:nth-child(2) {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .footer__list-contact .row .col-footer:nth-child(3) {
+    margin-top: 0;
+  }
+}
+.footer__list-contact .row .col-footer__title {
+  text-align: center;
+  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+}
+.footer__list-contact .row .col-footer__list {
+  margin-top: 2rem;
+}
+.footer__list-contact .row .col-footer__list li {
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.footer__list-contact .row .col-footer__list li:nth-child(2) {
+  margin-top: 1rem;
+}
+.footer__list-contact .row .col-footer__list li span:nth-child(2) {
+  margin-top: 0.2rem;
+}
+.footer__bottom-footer {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+@media (min-width: 768px) {
+  .footer__bottom-footer {
+    flex-direction: row;
+  }
+}
+.footer__bottom-footer .copyright {
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .footer__bottom-footer .copyright {
+    margin-top: 0;
+  }
+}
+.footer__bottom-footer .container-links {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+@media (min-width: 768px) {
+  .footer__bottom-footer .container-links {
+    flex-direction: row;
+  }
+}
+.footer .grid-dots {
+  bottom: 0;
+  left: 0;
+  transform: translate(-47%, 23%);
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .footer .grid-dots {
+    opacity: 1;
+  }
 }
 
 #header-home-page {
@@ -5682,11 +5810,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
 }
 #header-home-page .content-header__adress {
-  font-family: "Sorts Mill Goudy", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.2rem;
+  color: white;
 }
 #header-home-page .content-header__title {
   font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -5695,6 +5823,7 @@ p {
   text-align: center;
   text-transform: uppercase;
   margin-top: 1rem;
+  color: white;
 }
 @media (min-width: 768px) {
   #header-home-page .content-header__title {
@@ -5709,6 +5838,7 @@ p {
 #header-home-page .content-header__text {
   text-align: center;
   margin-top: 1rem;
+  color: white;
 }
 #header-home-page .content-header__btn {
   margin-top: 1rem;
@@ -5843,6 +5973,51 @@ p {
   }
 }
 
+#review-section .list-review {
+  position: relative;
+  margin-top: 5rem;
+}
+#review-section .list-review .grid-dots {
+  z-index: -10;
+}
+#review-section .list-review .grid-dots:nth-child(1) {
+  transform: translate(-35%, -65%);
+  top: 100%;
+}
+#review-section .list-review .grid-dots:nth-child(2) {
+  transform: translate(-65%, -35%);
+  left: 100%;
+}
+#review-section .list-review .item-review:nth-child(2) {
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  #review-section .list-review .item-review:nth-child(2) {
+    margin-top: 0;
+  }
+}
+#review-section .list-review .item-review .item-review-content {
+  padding: 40px;
+  box-shadow: 0 0 30px #00000038;
+  background: white;
+}
+@media (min-width: 576px) {
+  #review-section .list-review .item-review .item-review-content {
+    padding: 40px 70px;
+  }
+}
+#review-section .list-review .item-review .item-review-content__text {
+  text-align: center;
+  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+#review-section .list-review .item-review .item-review-content__name {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
 .top-navbar {
   background: #f8f8f8;
   height: 38px;
@@ -5857,7 +6032,7 @@ p {
 }
 .top-navbar .content-top-navbar .contact-infos {
   color: #747474;
-  font-family: "Sorts Mill Goudy", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 .top-navbar .content-top-navbar .socials-network .social-link svg {
   color: #747474;
@@ -6038,6 +6213,13 @@ p {
   .navbar .content-navbar .nav .nav-item:last-child {
     padding-right: 0;
   }
+}
+
+#cta-section {
+  background: #fef6f9;
+}
+#cta-section .container-btn {
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
