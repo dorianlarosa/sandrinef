@@ -1,1 +1,159 @@
- 
+ #page-massages {
+     #services-section {
+         .list-items {
+             .item {
+
+                 padding: 4rem 0;
+                 border-top: 1px solid rgba(0, 0, 0, 0.082);
+
+                 &:first-child {
+                     margin-top: 0;
+                     border-top: none;
+
+                 }
+
+                 &:last-child {
+                     margin-bottom: 0;
+                 }
+
+                 &:nth-child(2n) {
+                     .item-content {
+                         @include media-breakpoint-up(lg) {
+                             flex-direction: row-reverse;
+                         }
+                     }
+                 }
+
+                 &.not-available {
+                     .btn-not-available {
+                         left: 10px;
+                         right: initial;
+                     }
+
+                     .item-content {
+                         .item-infos {
+
+                             &__container-btn {
+                                 display: none;
+                             }
+                         }
+                     }
+                 }
+
+                 .item-content {
+                    height:100%;
+
+                     @include media-breakpoint-up(md) {
+                         max-width: 450px;
+                     }
+
+                     @include media-breakpoint-up(lg) {
+                         max-width: initial;
+                         flex-direction: row;
+                     }
+
+                     &__image {
+                         @include media-breakpoint-up(lg) {
+                             width: 280px;
+                             height: 240px;
+
+                         }
+                     }
+
+                     .item-infos {
+
+                         display: flex;
+                         flex-direction: column;
+                         padding: 10px 40px;
+                         position: relative;
+                         width: 100%;
+                         justify-content: center;
+                         height:100%;
+
+                         &__title {
+                             font-family: $font-family-sans-serif;
+                             font-size: 1.2rem;
+                             font-weight: 600;
+                             margin-top: 2.5rem;
+                             text-align: center;
+
+                             @include media-breakpoint-up(lg) {
+                                 text-align: initial;
+                                 margin-top: 0rem;
+
+                             }
+
+
+                         }
+
+                         &__text {
+                             text-align: center;
+                             margin-top: 2rem;
+
+                             @include media-breakpoint-up(lg) {
+                                 text-align: initial;
+                             }
+                         }
+
+                         &__list-duration {
+                             display: flex;
+                             justify-content: center;
+                             margin-top: 1.5rem;
+
+                             @include media-breakpoint-up(lg) {
+
+                                 justify-content: initial;
+
+                             }
+
+                             .item-duration {
+                                 margin: 0 5px;
+                                 font-size: .9rem;
+                             }
+
+
+                         }
+
+                         &__price-container {
+                             text-align: center;
+                             margin-top: .8rem;
+
+                             @include media-breakpoint-up(lg) {
+
+                                 text-align: initial;
+
+                             }
+                         }
+
+                         &__container-btn {
+                             margin-top: 2rem;
+
+                             @include media-breakpoint-up(lg) {
+                                 margin-top: 0;
+                             }
+
+
+                             .btn {
+                                 display: inline-block;
+
+                                 @include media-breakpoint-up(lg) {
+                                     position: absolute;
+                                     right: 40px;
+                                     bottom: 10px;
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+     }
+
+     #shop-section {
+         background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 100%),
+         url('images/shop-section.jpg');
+         background-size: cover;
+     } 
+
+    
+ }

@@ -5445,6 +5445,7 @@ ul {
 }
 ul li {
   list-style: none;
+  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 a {
@@ -5473,9 +5474,14 @@ span {
 }
 
 .header {
+  padding-top: 70px;
+  padding-bottom: 70px;
   background-size: cover;
   background-position: center center;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header::after {
   content: "";
@@ -5486,18 +5492,22 @@ span {
   left: 0;
   background: rgba(0, 0, 0, 0.671);
 }
-.header .content-header {
+.header .container-content-header {
   z-index: 10;
+}
+.header#header-page {
+  height: 350px;
+}
+.header#header-page .content-header__title {
+  color: white;
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 4rem;
 }
 
 .section {
   padding-top: 110px;
   padding-bottom: 110px;
   overflow: hidden;
-}
-.section.header {
-  padding-top: 70px;
-  padding-bottom: 70px;
 }
 .section__title {
   font-family: "Mr De Haviland", cursive, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -5516,6 +5526,22 @@ span {
   margin-right: auto;
   display: block;
   margin-top: 1.5rem;
+}
+.section h3 {
+  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+@media (min-width: 576px) {
+  .section h3 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .section h3 {
+    font-size: 1.2rem;
+  }
 }
 .section__subtitle {
   font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -5632,6 +5658,13 @@ span {
   font-size: 0.8rem;
 }
 
+.badge {
+  background: #fef6f9;
+  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 5px 20px;
+  border-radius: 50px;
+}
+
 .list-items {
   margin-top: 5rem;
 }
@@ -5641,6 +5674,21 @@ span {
 .list-items .row .item {
   padding-left: 20px;
   padding-right: 20px;
+}
+.list-items .row .item.not-available {
+  opacity: 0.6;
+}
+.list-items .row .item.not-available .item-content .btn-not-available {
+  display: block;
+}
+.list-items .row .item.not-available .item-content__container-btn {
+  display: none !important;
+}
+.list-items .row .item .item-content .btn-not-available {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 .list-items .row .item .item-content {
   position: relative;
@@ -5678,20 +5726,7 @@ span {
 }
 .list-items .row .item .item-content__title {
   text-align: center;
-  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.2rem;
-  font-weight: 600;
   margin-top: 2.5rem;
-}
-@media (min-width: 576px) {
-  .list-items .row .item .item-content__title {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 768px) {
-  .list-items .row .item .item-content__title {
-    font-size: 1.2rem;
-  }
 }
 .list-items .row .item .item-content__text {
   text-align: center;
@@ -5801,25 +5836,22 @@ span {
   }
 }
 
-#header-home-page {
+#home-page #header-home-page {
   height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 330px;
 }
-#header-home-page .content-header {
+#home-page #header-home-page .content-header {
   max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#header-home-page .content-header__adress {
+#home-page #header-home-page .content-header__adress {
   font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.2rem;
   color: white;
 }
-#header-home-page .content-header__title {
+#home-page #header-home-page .content-header__title {
   font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   font-size: 1.5rem;
@@ -5829,109 +5861,91 @@ span {
   color: white;
 }
 @media (min-width: 768px) {
-  #header-home-page .content-header__title {
+  #home-page #header-home-page .content-header__title {
     font-size: 2rem;
   }
 }
 @media (min-width: 992px) {
-  #header-home-page .content-header__title {
+  #home-page #header-home-page .content-header__title {
     font-size: 3rem;
   }
 }
-#header-home-page .content-header__text {
+#home-page #header-home-page .content-header__text {
   text-align: center;
   margin-top: 1rem;
   color: white;
 }
-#header-home-page .content-header__btn {
+#home-page #header-home-page .content-header__btn {
   margin-top: 1rem;
 }
-
-#presentation-section .section__image-col {
+#home-page #presentation-section .section__image-col {
   margin-top: 5rem;
   position: relative;
 }
 @media (min-width: 768px) {
-  #presentation-section .section__image-col {
+  #home-page #presentation-section .section__image-col {
     margin-top: 0;
   }
 }
-#presentation-section .section__image-col img {
+#home-page #presentation-section .section__image-col img {
   object-fit: cover;
   width: 100%;
   height: 300px;
 }
 @media (min-width: 576px) {
-  #presentation-section .section__image-col img {
+  #home-page #presentation-section .section__image-col img {
     height: 500px;
   }
 }
 @media (min-width: 768px) {
-  #presentation-section .section__image-col img {
+  #home-page #presentation-section .section__image-col img {
     height: 100%;
   }
 }
-#presentation-section .section__image-col .grid-dots {
+#home-page #presentation-section .section__image-col .grid-dots {
   bottom: 0;
   left: 0;
   transform: translate(4%, 23%);
 }
 @media (min-width: 576px) {
-  #presentation-section .section__image-col .grid-dots {
+  #home-page #presentation-section .section__image-col .grid-dots {
     transform: translate(-33%, 39%);
   }
 }
-
-#services-section .list-items {
+#home-page #services-section .list-items {
   position: relative;
 }
-#services-section .list-items .grid-dots {
+#home-page #services-section .list-items .grid-dots {
   transform: translate(-3%, -36%);
 }
 @media (min-width: 576px) {
-  #services-section .list-items .grid-dots {
+  #home-page #services-section .list-items .grid-dots {
     transform: translate(90%, -50%);
     top: 50%;
     right: 0;
   }
 }
-#services-section .list-items .row .item:nth-child(2), #services-section .list-items .row .item:nth-child(3), #services-section .list-items .row .item:nth-child(4), #services-section .list-items .row .item:nth-child(5) {
+#home-page #services-section .list-items .row .item:nth-child(2), #home-page #services-section .list-items .row .item:nth-child(3), #home-page #services-section .list-items .row .item:nth-child(4), #home-page #services-section .list-items .row .item:nth-child(5) {
   margin-top: 6rem;
 }
 @media (min-width: 576px) {
-  #services-section .list-items .row .item:nth-child(2) {
+  #home-page #services-section .list-items .row .item:nth-child(2) {
     margin-top: 0rem;
   }
 }
 @media (min-width: 992px) {
-  #services-section .list-items .row .item:nth-child(3) {
+  #home-page #services-section .list-items .row .item:nth-child(3) {
     margin-top: 0;
   }
 }
-#services-section .list-items .row .item.not-available {
-  opacity: 0.6;
-}
-#services-section .list-items .row .item.not-available .item-content .btn-not-available {
-  display: block;
-}
-#services-section .list-items .row .item.not-available .item-content__container-btn {
-  display: none !important;
-}
-#services-section .list-items .row .item .item-content .btn-not-available {
-  display: none;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-#evenement-section {
+#home-page #evenement-section {
   background: #fef6f9;
   position: relative;
 }
-#evenement-section .container-btn {
+#home-page #evenement-section .container-btn {
   margin-top: 3rem;
 }
-#evenement-section .image-section {
+#home-page #evenement-section .image-section {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -5941,51 +5955,50 @@ span {
   display: none;
 }
 @media (min-width: 768px) {
-  #evenement-section .image-section {
+  #home-page #evenement-section .image-section {
     display: block;
   }
 }
-
-#review-section .list-review {
+#home-page #review-section .list-review {
   position: relative;
   margin-top: 5rem;
 }
-#review-section .list-review .grid-dots {
+#home-page #review-section .list-review .grid-dots {
   z-index: -10;
 }
-#review-section .list-review .grid-dots:nth-child(1) {
+#home-page #review-section .list-review .grid-dots:nth-child(1) {
   transform: translate(-35%, -65%);
   top: 100%;
 }
-#review-section .list-review .grid-dots:nth-child(2) {
+#home-page #review-section .list-review .grid-dots:nth-child(2) {
   transform: translate(-65%, -35%);
   left: 100%;
 }
-#review-section .list-review .item-review:nth-child(2) {
+#home-page #review-section .list-review .item-review:nth-child(2) {
   margin-top: 4rem;
 }
 @media (min-width: 768px) {
-  #review-section .list-review .item-review:nth-child(2) {
+  #home-page #review-section .list-review .item-review:nth-child(2) {
     margin-top: 0;
   }
 }
-#review-section .list-review .item-review .item-review-content {
+#home-page #review-section .list-review .item-review .item-review-content {
   padding: 40px;
   box-shadow: 0 0 30px #00000038;
   background: white;
 }
 @media (min-width: 576px) {
-  #review-section .list-review .item-review .item-review-content {
+  #home-page #review-section .list-review .item-review .item-review-content {
     padding: 40px 70px;
   }
 }
-#review-section .list-review .item-review .item-review-content__text {
+#home-page #review-section .list-review .item-review .item-review-content__text {
   text-align: center;
   font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   line-height: 1.6rem;
 }
-#review-section .list-review .item-review .item-review-content__name {
+#home-page #review-section .list-review .item-review .item-review-content__name {
   margin-top: 2rem;
   text-align: center;
   font-weight: 600;
@@ -6189,6 +6202,175 @@ span {
   .navbar .content-navbar .menu .menu-item:last-child {
     padding-right: 0;
   }
+}
+
+#page-a-propos-de-moi #a-propos-section .section__text {
+  max-width: initial;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications {
+  margin-top: 5rem;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col {
+  margin-top: 5rem;
+}
+@media (min-width: 768px) {
+  #page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col {
+    margin-top: 0;
+  }
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col h3 {
+  margin-top: 0;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col .list-qualifications {
+  margin-top: 1.5rem;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col .list-qualifications .qualification-item {
+  padding: 15px 15px 15px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+  font-size: 0.9rem;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .qualifications-col .list-qualifications .qualification-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .image-col {
+  position: relative;
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .image-col img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+@media (min-width: 992px) {
+  #page-a-propos-de-moi #a-propos-section .container-qualifications .image-col img {
+    height: 100%;
+    min-height: 300px;
+  }
+}
+#page-a-propos-de-moi #a-propos-section .container-qualifications .image-col .grid-dots {
+  bottom: 0;
+  left: 0;
+  transform: translate(-21%, 23%);
+}
+
+#page-massages #services-section .list-items .item {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.082);
+}
+#page-massages #services-section .list-items .item:first-child {
+  margin-top: 0;
+  border-top: none;
+}
+#page-massages #services-section .list-items .item:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item:nth-child(2n) .item-content {
+    flex-direction: row-reverse;
+  }
+}
+#page-massages #services-section .list-items .item.not-available .btn-not-available {
+  left: 10px;
+  right: initial;
+}
+#page-massages #services-section .list-items .item.not-available .item-content .item-infos__container-btn {
+  display: none;
+}
+#page-massages #services-section .list-items .item .item-content {
+  height: 100%;
+}
+@media (min-width: 768px) {
+  #page-massages #services-section .list-items .item .item-content {
+    max-width: 450px;
+  }
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content {
+    max-width: initial;
+    flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content__image {
+    width: 280px;
+    height: 240px;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 40px;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__title {
+  font-family: "Raleway", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__title {
+    text-align: initial;
+    margin-top: 0rem;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__text {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__text {
+    text-align: initial;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__list-duration {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__list-duration {
+    justify-content: initial;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__list-duration .item-duration {
+  margin: 0 5px;
+  font-size: 0.9rem;
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__price-container {
+  text-align: center;
+  margin-top: 0.8rem;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__price-container {
+    text-align: initial;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__container-btn {
+  margin-top: 2rem;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__container-btn {
+    margin-top: 0;
+  }
+}
+#page-massages #services-section .list-items .item .item-content .item-infos__container-btn .btn, #page-massages #services-section .list-items .item .item-content .item-infos__container-btn .navbar .content-navbar .menu .btn-menu a, .navbar .content-navbar .menu .btn-menu #page-massages #services-section .list-items .item .item-content .item-infos__container-btn a {
+  display: inline-block;
+}
+@media (min-width: 992px) {
+  #page-massages #services-section .list-items .item .item-content .item-infos__container-btn .btn, #page-massages #services-section .list-items .item .item-content .item-infos__container-btn .navbar .content-navbar .menu .btn-menu a, .navbar .content-navbar .menu .btn-menu #page-massages #services-section .list-items .item .item-content .item-infos__container-btn a {
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+  }
+}
+#page-massages #shop-section {
+  background-image: linear-gradient(90deg, white 0%, white 55%, rgba(255, 255, 255, 0) 100%), url("images/shop-section.jpg");
+  background-size: cover;
 }
 
 #avantages-section .list-items {

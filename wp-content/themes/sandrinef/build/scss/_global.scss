@@ -34,6 +34,7 @@ ul {
 
     li {
         list-style: none;
+        font-family: $font-family-sans-serif;
     }
 }
 
@@ -64,10 +65,20 @@ span {
     }
 }
 
+.header {}
+
+//////////////////////
+// HEADER
+///////////////////////
 .header {
+    padding-top: 70px;
+    padding-bottom: 70px;
     background-size: cover;
     background-position: center center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::after {
         content: '';
@@ -79,8 +90,21 @@ span {
         background: rgba(0, 0, 0, 0.671);
     }
 
-    .content-header {
+    .container-content-header {
         z-index: 10;
+
+        .content-header {}
+    }
+
+
+    &#header-page {
+        height: 350px;
+
+        .content-header__title {
+            color: $white;
+            font-family: $font-family-text;
+            font-size: 4rem;
+        }
     }
 }
 
@@ -90,12 +114,7 @@ span {
 .section {
     padding-top: 110px;
     padding-bottom: 110px;
-    overflow: hidden; 
-
-    &.header {
-        padding-top: 70px;
-        padding-bottom: 70px;
-    }
+    overflow: hidden;
 
     &__title {
         font-family: $font-family-title;
@@ -114,6 +133,21 @@ span {
         margin-right: auto;
         display: block;
         margin-top: 1.5rem;
+    }
+
+    h3 {
+        font-family: $font-family-sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 2.5rem;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 1rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.2rem;
+        }
     }
 
     &__subtitle {
@@ -166,7 +200,7 @@ span {
 
 // bold-text
 .bold-text {
- font-weight:600;                               
+    font-weight: 600;
 }
 
 // Grid dots
@@ -241,6 +275,14 @@ span {
     }
 }
 
+// BADGE
+
+.badge {
+    background:$primary;
+    font-family: $font-family-text;
+    padding:5px 20px;
+    border-radius:50px;
+}
 
 // ITEM
 .list-items {
@@ -254,6 +296,31 @@ span {
 
             padding-left: 20px;
             padding-right: 20px;
+
+            &.not-available {
+                opacity: .6;
+
+                .item-content {
+                    .btn-not-available {
+                        display: block;
+                    }
+
+                    &__container-btn {
+                        display: none !important;
+                    }
+                }
+            }
+
+            .item-content {
+
+
+                .btn-not-available {
+                    display: none;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                }
+            }
 
             .item-content {
                 position: relative;
@@ -287,7 +354,7 @@ span {
                     height: 250px;
                     object-fit: cover;
 
-                   
+
 
                     @include media-breakpoint-up(md) {
                         height: 290px;
@@ -296,18 +363,7 @@ span {
 
                 &__title {
                     text-align: center;
-                    font-family: $font-family-sans-serif;
-                    font-size: 1.2rem;
-                    font-weight: 600;
                     margin-top: 2.5rem;
-
-                    @include media-breakpoint-up(sm) {
-                        font-size: 1rem;
-                    }
-
-                    @include media-breakpoint-up(md) {
-                        font-size: 1.2rem;
-                    }
                 }
 
                 &__text {

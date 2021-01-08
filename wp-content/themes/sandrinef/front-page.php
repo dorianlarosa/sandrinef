@@ -2,11 +2,13 @@
 
 <div id="home-page">
     <section id="header-home-page" class="container-fluid header" style="background-image:url('<?= get_template_directory_uri() ?>/images/header-homepage.jpg');">
-        <div class="content-header">
-            <span class="content-header__adress">14 Grande rue, 25000 Besançon</span>
-            <h1 class="content-header__title">Sandrine F Bien-être</h1>
-            <p class="content-header__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam totam culpa atque quibusdam enim facilis voluptates recusandae.</p>
-            <a href="" class="content-header__btn btn btn__light">Reserver</a>
+        <div class="container container-content-header">
+            <div class="content-header">
+                <span class="content-header__adress">14 Grande rue, 25000 Besançon</span>
+                <h1 class="content-header__title">Sandrine F Bien-être</h1>
+                <p class="content-header__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam totam culpa atque quibusdam enim facilis voluptates recusandae.</p>
+                <a href="" class="content-header__btn btn btn__light">Reserver</a>
+            </div>
         </div>
     </section>
 

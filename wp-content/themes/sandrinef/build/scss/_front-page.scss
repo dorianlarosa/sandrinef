@@ -1,246 +1,222 @@
-#header-home-page {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 330px;
+#home-page {
+    #header-home-page {
+        height: 80vh;
+        min-height: 330px;
 
-    .content-header {
-        max-width: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        .content-header {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        &__adress {
-            font-family: $font-family-text;
-            font-size: 1.2rem;
-            color: $white;
-
-        }
-
-        &__title {
-            font-family: $font-family-sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            text-align: center;
-            text-transform: uppercase;
-            margin-top: 1rem;
-            color: $white;
-
-
-            @include media-breakpoint-up(md) {
-                font-size: 2rem;
+            &__adress {
+                font-family: $font-family-text;
+                font-size: 1.2rem;
+                color: $white;
 
             }
 
-            @include media-breakpoint-up(lg) {
-                font-size: 3rem;
-            }
-        }
-
-        &__text {
-            text-align: center;
-            margin-top: 1rem;
-            color: $white;
-
-        }
-
-        &__btn {
-            margin-top: 1rem;
-        }
-
-    }
-}
+            &__title {
+                font-family: $font-family-sans-serif;
+                font-weight: 700;
+                font-size: 1.5rem;
+                text-align: center;
+                text-transform: uppercase;
+                margin-top: 1rem;
+                color: $white;
 
 
-#presentation-section {
-    .section__image-col {
-        // background-image: url('/images/bienvenu-section-frontpage.jpg');
+                @include media-breakpoint-up(md) {
+                    font-size: 2rem;
 
-        margin-top: 5rem;
-        position: relative;
-
-        @include media-breakpoint-up(md) {
-            margin-top: 0;
-        }
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            height: 300px;
-
-            @include media-breakpoint-up(sm) {
-                height: 500px;
-            }
-
-            @include media-breakpoint-up(md) {
-                height: 100%;
-            }
-        }
-
-        .grid-dots {
-            bottom: 0;
-            left: 0;
-            transform: translate(4%, 23%);
-
-            @include media-breakpoint-up(sm) {
-                transform: translate(-33%, 39%);
-            }
-        }
-    }
-}
-
-#services-section {
-    .list-items {
-        position: relative;
-
-        .grid-dots {
-            transform: translate(-3%, -36%);
-
-            @include media-breakpoint-up(sm) {
-                transform: translate(90%, -50%);
-                top: 50%;
-                right: 0;
-            }
-        }
-
-        .row {
-            .item {
-
-                &:nth-child(2),
-                &:nth-child(3),
-                &:nth-child(4),
-                &:nth-child(5) {
-                    margin-top: 6rem;
-                }
-
-                @include media-breakpoint-up(sm) {
-                    &:nth-child(2) {
-                        margin-top: 0rem;
-                    }
                 }
 
                 @include media-breakpoint-up(lg) {
-                    &:nth-child(3) {
+                    font-size: 3rem;
+                }
+            }
+
+            &__text {
+                text-align: center;
+                margin-top: 1rem;
+                color: $white;
+
+            }
+
+            &__btn {
+                margin-top: 1rem;
+            }
+
+        }
+    }
+
+
+    #presentation-section {
+        .section__image-col {
+            // background-image: url('/images/bienvenu-section-frontpage.jpg');
+
+            margin-top: 5rem;
+            position: relative;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 300px;
+
+                @include media-breakpoint-up(sm) {
+                    height: 500px;
+                }
+
+                @include media-breakpoint-up(md) {
+                    height: 100%;
+                }
+            }
+
+            .grid-dots {
+                bottom: 0;
+                left: 0;
+                transform: translate(4%, 23%);
+
+                @include media-breakpoint-up(sm) {
+                    transform: translate(-33%, 39%);
+                }
+            }
+        }
+    }
+
+    #services-section {
+        .list-items {
+            position: relative;
+
+            .grid-dots {
+                transform: translate(-3%, -36%);
+
+                @include media-breakpoint-up(sm) {
+                    transform: translate(90%, -50%);
+                    top: 50%;
+                    right: 0;
+                }
+            }
+
+            .row {
+                .item {
+
+                    &:nth-child(2),
+                    &:nth-child(3),
+                    &:nth-child(4),
+                    &:nth-child(5) {
+                        margin-top: 6rem;
+                    }
+
+                    @include media-breakpoint-up(sm) {
+                        &:nth-child(2) {
+                            margin-top: 0rem;
+                        }
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        &:nth-child(3) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+
+    #evenement-section {
+        background: $primary;
+        position: relative;
+
+        .col-text {}
+
+        .container-btn {
+            margin-top: 3rem;
+        }
+
+
+        .image-section {
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            left: 50%;
+            top: 0;
+            object-fit: cover;
+            display: none;
+
+            @include media-breakpoint-up(md) {
+                display: block;
+            }
+        }
+
+    }
+
+
+    #review-section {
+        .list-review {
+            position: relative;
+            margin-top: 5rem;
+
+            .grid-dots {
+
+                z-index: -10;
+
+                &:nth-child(1) {
+                    transform: translate(-35%, -65%);
+                    top: 100%;
+
+
+                }
+
+                &:nth-child(2) {
+                    transform: translate(-65%, -35%);
+                    left: 100%;
+
+
+                }
+
+            }
+
+            .item-review {
+
+                &:nth-child(2) {
+                    margin-top: 4rem;
+
+                    @include media-breakpoint-up(md) {
                         margin-top: 0;
                     }
                 }
 
-                &.not-available {
-                    opacity: .6;
+                .item-review-content {
+                    padding: 40px;
+                    box-shadow: $box-shadow-1;
+                    background: $white;
 
-                    .item-content {
-                        .btn-not-available {
-                            display: block;
-                        }
+                    @include media-breakpoint-up(sm) {
+                        padding: 40px 70px;
 
-                        &__container-btn {
-                            display: none !important;
-                        }
                     }
-                }
 
-                .item-content {
-
-
-                    .btn-not-available {
-                        display: none;
-                        position: absolute;
-                        right: 10px;
-                        top: 10px;
+                    &__text {
+                        text-align: center;
+                        font-family: $font-family-sans-serif;
+                        font-size: .9rem;
+                        line-height: 1.6rem;
                     }
-                }
-            }
-        }
-    }
-}
 
+                    &__name {
+                        margin-top: 2rem;
+                        text-align: center;
+                        font-weight: 600;
 
-#evenement-section {
-    background: $primary;
-    position: relative;
-
-    .col-text {}
-
-    .container-btn {
-        margin-top: 3rem;
-    }
-
-
-    .image-section {
-        position: absolute;
-        height: 100%;
-        width: 50%;
-        left: 50%;
-        top: 0;
-        object-fit: cover;
-        display: none;
-
-        @include media-breakpoint-up(md) {
-            display: block;
-        }
-    }
-
-}
-
-
-#review-section {
-    .list-review {
-        position: relative;
-        margin-top: 5rem;
-
-        .grid-dots {
-
-            z-index: -10;
-
-            &:nth-child(1) {
-                transform: translate(-35%, -65%);
-                top: 100%;
-
-
-            }
-
-            &:nth-child(2) {
-                transform: translate(-65%, -35%);
-                left: 100%;
-
-
-            }
-
-        }
-
-        .item-review {
-
-            &:nth-child(2) {
-                margin-top: 4rem;
-
-                @include media-breakpoint-up(md) {
-                    margin-top: 0;
-                }
-            }
-
-            .item-review-content {
-                padding: 40px;
-                box-shadow: $box-shadow-1;
-                background: $white;
-
-                @include media-breakpoint-up(sm) {
-                    padding: 40px 70px;
-
-                }
-
-                &__text {
-                    text-align: center;
-                    font-family: $font-family-sans-serif;
-                    font-size: .9rem;
-                    line-height: 1.6rem;
-                }
-
-                &__name {
-                    margin-top: 2rem;
-                    text-align: center;
-                    font-weight: 600;
-
+                    }
                 }
             }
         }
