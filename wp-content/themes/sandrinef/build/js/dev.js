@@ -23,6 +23,6 @@
 ////////////
 
 document.getElementById("mobile-menu").onclick = function () {
-    document.getElementById("primary-nav").classList.toggle("show-mobile-nav");
+    document.getElementById("menu-menu-principal").classList.toggle("show-mobile-nav");
     this.classList.toggle("is-active");
 }

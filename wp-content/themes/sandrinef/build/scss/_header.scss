@@ -1,7 +1,7 @@
 .top-navbar {
     background: $grey;
     height: 38px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -12,7 +12,7 @@
 
         .contact-infos {
             color: $dark-grey;
-            font-family:$font-family-text;
+            font-family: $font-family-text;
         }
 
         .socials-network {
@@ -75,7 +75,7 @@
 
         /* MOBILE NAVIGATION */
 
-        .nav {
+        .menu {
             display: flex;
             flex-direction: column;
             position: fixed;
@@ -90,7 +90,7 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity .4s, visibility 0s .4s;
-            z-index:100;
+            z-index: 100;
 
 
             @include media-breakpoint-up(sm) {
@@ -104,10 +104,20 @@
                 transition: opacity .4s, visibility 0s;
             }
 
-            .nav-item {
+            .menu-item {
                 padding: 20px 25px;
 
-                .nav-link {
+                &.active {
+                    a {
+                        &:after {
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+
+                }
+
+                a {
                     font-size: .9rem;
                     color: $action;
                     text-transform: uppercase;
@@ -117,13 +127,6 @@
 
                     @include hover-supported {
                         &:not(.btn):after {
-                            width: 100%;
-                            left: 0;
-                        }
-                    }
-
-                    &.active {
-                        &:after {
                             width: 100%;
                             left: 0;
                         }
@@ -140,6 +143,16 @@
                         background: $action;
                         transition: width 0.3s ease 0s, left 0.3s ease 0s;
                         width: 0;
+                    }
+                }
+            }
+
+            .btn-menu {
+                a {
+                    @extend .btn;
+
+                    &:after {
+                        display:none;
                     }
                 }
             }
@@ -199,7 +212,7 @@
                 display: none;
             }
 
-            .nav {
+            .menu {
                 display: flex;
                 align-items: center;
                 position: initial;
@@ -214,7 +227,7 @@
                 visibility: visible;
                 z-index: initial;
 
-                .nav-item {
+                .menu-item {
                     padding: 15px 20px;
 
                     &:first-child {

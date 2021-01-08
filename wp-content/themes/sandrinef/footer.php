@@ -14,7 +14,7 @@
                                                         </p>
                                                         <ul class="col-footer__list">
                                                                 <li>
-                                                                        <span> 
+                                                                        <span>
                                                                                 26 Grande rue,</span>
                                                                         <span>
                                                                                 25000 Besançon
@@ -65,8 +65,13 @@
                                         </span>
 
                                         <div class="container-links">
-                                                <span><a href="">Mentions légales</a></span>
-                                                <span><a href="">Politique de confidentialitée</a></span>
+                                                <?php
+                                                wp_nav_menu(array(
+                                                        'theme_location' => 'footer-menu',
+                                                        'menu_class' => 'menu',
+                                                )); ?>
+                                                <!-- <span><a href="">Mentions légales</a></span>
+                                                <span><a href="">Politique de confidentialitée</a></span> -->
                                         </div>
                                 </div>
                                 <?php get_template_part('parts/grid-dots'); ?>

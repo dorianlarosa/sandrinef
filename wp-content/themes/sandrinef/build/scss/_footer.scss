@@ -60,7 +60,7 @@
                                 margin-top: .2rem;
                             }
 
-                            
+
                         }
                     }
                 }
@@ -91,15 +91,29 @@
         }
 
         .container-links {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            font-family: $font-family-text;
+            .menu {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                font-family: $font-family-text;
 
-            @include media-breakpoint-up(md) {
-                flex-direction: row;
+                @include media-breakpoint-up(md) {
+                    flex-direction: row;
 
+                }
+
+                li {
+                    @include media-breakpoint-up(md) {
+                        margin-left: 20px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+
+                }
             }
+
         }
     }
 
@@ -110,7 +124,7 @@
         opacity: 0;
 
         @include media-breakpoint-up(md) {
-            opacity:1;
+            opacity: 1;
         }
     }
 }

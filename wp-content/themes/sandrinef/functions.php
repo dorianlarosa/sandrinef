@@ -266,7 +266,7 @@ function custom_post_type()
     'show_in_admin_bar'     => true,
     'show_in_nav_menus'     => true,
     'can_export'            => true,
-    'has_archive'           => true,
+    'has_archive'           => false,
     'exclude_from_search'   => false,
     'publicly_queryable'    => false,
     'capability_type'       => 'page',
@@ -411,4 +411,33 @@ if (function_exists('acf_add_options_page')) {
     'icon_url'      => 'dashicons-calendar-alt',
     'redirect'      => false,
   ));
+}
+
+
+/////////
+// ADD MENU WORDPRESS
+/////////
+
+// s'il y a plusieurs menus à rajouter, voici le code :
+function register_my_menus() {
+  register_nav_menus(
+  array(
+  'main-menu' => __( 'Menu principal' ),
+  'footer-menu' => __( 'Menu Footer' ),
+  )
+  );
+ }
+ add_action( 'init', 'register_my_menus' );
+
+////////
+// ADD CLASS ACTIVE MENU WORDPRESS CURRENT PAGE
+////////
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+  if (in_array('current-menu-item', $classes) ){
+    $classes[] = 'active ';
+  }
+  return $classes;
 }

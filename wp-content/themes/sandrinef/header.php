@@ -48,12 +48,11 @@
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-                <ul class="nav" id="primary-nav">
-                    <li class="nav-item"><a href="#" class="nav-link active">Accueil</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">A propos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Massages</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                    <li class="nav-item"><a href="#" class="btn nav-link__btn">Réserver</a></li>
-                </ul>
+
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'main-menu',
+                    'menu_class' => 'menu',
+                )); ?>
             </nav>
         </div>
