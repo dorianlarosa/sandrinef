@@ -823,7 +823,7 @@ textarea {
 
         .contact-infos {
             color: $dark-grey;
-            font-family: $font-family-text;
+            font-family: "Segoe UI";
         }
 
         .socials-network {
@@ -840,7 +840,10 @@ textarea {
     background: $white;
     padding-top: 10px;
     padding-bottom: 10px;
-
+    position: sticky;
+    top:0;
+    box-shadow: $box-shadow-navbar;
+    z-index:1000;
 
     .content-navbar {
         display: flex;
@@ -891,17 +894,16 @@ textarea {
             flex-direction: column;
             position: fixed;
             justify-content: center;
-            top: 128px;
-            left: 0;
+            top: 90px;
+            left: 0; 
             background-color: #fff;
             width: 100vw;
-            height: calc(100vh - 128px);
+            height: calc(100vh - 90px);
             text-align: center;
             overflow: hidden;
             opacity: 0;
             visibility: hidden;
-            transition: opacity .4s, visibility 0s .4s;
-            z-index: 100;
+            z-index: -1;
 
 
             @include media-breakpoint-up(sm) {
@@ -1650,7 +1652,10 @@ $grey-border : rgba(0, 0, 0, 0.075);
 $action-opacity:#170813b5;
 
 // BOX SHADOW
+$box-shadow-navbar: 0px 10px 13px #0000001c;
+
 $box-shadow-1: 0 0 30px #00000038;
+
 
 // MARGIN
 $margin-top-between-content-section : 5rem;

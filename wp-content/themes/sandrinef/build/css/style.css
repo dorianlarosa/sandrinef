@@ -6085,7 +6085,7 @@ textarea {
 }
 .top-navbar .content-top-navbar .contact-infos {
   color: #747474;
-  font-family: "EB Garamond", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Segoe UI";
 }
 .top-navbar .content-top-navbar .socials-network .social-link svg {
   color: #747474;
@@ -6095,6 +6095,10 @@ textarea {
   background: white;
   padding-top: 10px;
   padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 10px 13px #0000001c;
+  z-index: 1000;
 }
 .navbar .content-navbar {
   display: flex;
@@ -6148,17 +6152,16 @@ textarea {
   flex-direction: column;
   position: fixed;
   justify-content: center;
-  top: 128px;
+  top: 90px;
   left: 0;
   background-color: #fff;
   width: 100vw;
-  height: calc(100vh - 128px);
+  height: calc(100vh - 90px);
   text-align: center;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s, visibility 0s 0.4s;
-  z-index: 100;
+  z-index: -1;
 }
 @media (min-width: 576px) {
   .navbar .content-navbar .menu {

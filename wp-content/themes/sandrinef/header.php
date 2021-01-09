@@ -17,7 +17,7 @@
                 <div class="contact-infos">
                     <!-- <span class="mail">Contactez-moi : adresse@domaine.com</span>
                     <span class="separate-contact"> | </span> -->
-                    <span class="contact-tel">Appellez-moi : <?php the_field('numero_de_telephone', 'option'); ?></span>
+                    <span class="contact"><?php the_field('numero_de_telephone', 'option'); ?>  -  <?php the_field('adresse_email', 'option'); ?></span>
                 </div>
                 <div class="socials-network">
                     <a href="" class="social-link">

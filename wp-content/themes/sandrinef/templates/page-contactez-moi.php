@@ -55,13 +55,15 @@ get_header();
                         </ul>
                         <h3 class="title-horaire reveal-5">Horaires</h3>
                         <div class="container-horaires">
+                        <?php $horaires = get_field('horaires', 'option'); ?>
+
                             <div class="horaire-item reveal-6">
-                                <span>Du lundi au vendredi</span>
-                                <span class="bold-text">De 10h00 à 19h00</span>
+                                <span><?= $horaires['horaire_1']['periode']; ?></span>
+                                <span class="bold-text"><?= $horaires['horaire_1']['horaire']; ?></span>
                             </div>
                             <div class="horaire-item reveal-7">
-                                <span>Le samedi</span>
-                                <span class="bold-text">De 10h00 à 18h00</span>
+                                <span><?= $horaires['horaire_2']['periode']; ?></span>
+                                <span class="bold-text"><?= $horaires['horaire_2']['horaire']; ?></span>
                             </div>
                         </div>
 

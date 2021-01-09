@@ -15,11 +15,12 @@
                                                                         Adresse
                                                                 </p>
                                                                 <ul class="col-footer__list">
+                                                                        <?php $adress = get_field('adresse', 'option'); ?>
                                                                         <li>
                                                                                 <span>
-                                                                                        26 Grande rue,</span>
+                                                                                        <?= $adress['adresse']; ?>,</span>
                                                                                 <span>
-                                                                                        25000 Besançon
+                                                                                        <?= $adress['code_postal']; ?>
 
                                                                                 </span>
                                                                         </li>
@@ -48,14 +49,15 @@
                                                                 </p>
 
                                                                 <ul class="col-footer__list">
+                                                                <?php $horaires = get_field('horaires', 'option'); ?>
                                                                         <li>
-                                                                                <span>Du lundi au vendredi</span>
-                                                                                <span class="bold-text">De 10h00 à 19h00</span>
+                                                                                <span><?= $horaires['horaire_1']['periode']; ?></span>
+                                                                                <span class="bold-text"><?= $horaires['horaire_1']['horaire']; ?></span>
 
                                                                         </li>
                                                                         <li>
-                                                                                <span>Le samedi</span>
-                                                                                <span class="bold-text">De 10h00 à 18h00</span>
+                                                                                <span><?= $horaires['horaire_2']['periode']; ?></span>
+                                                                                <span class="bold-text"><?= $horaires['horaire_2']['horaire']; ?></span>
                                                                         </li>
                                                                 </ul>
                                                         </div>
