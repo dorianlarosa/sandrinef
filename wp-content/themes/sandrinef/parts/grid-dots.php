@@ -1,4 +1,4 @@
-<div class="grid-dots">
+<div class="grid-dots <?= $args; ?>">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>

@@ -8,6 +8,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-left: auto;
+            margin-right: auto;
 
             &__adress {
                 font-family: $font-family-text;
@@ -52,12 +54,12 @@
 
 
     #presentation-section {
+        
         .section__image-col {
             // background-image: url('/images/bienvenu-section-frontpage.jpg');
 
-            margin-top: 5rem;
+            margin-top: $margin-top-between-content-section-mobile;
             position: relative;
-
             @include media-breakpoint-up(md) {
                 margin-top: 0;
             }
@@ -66,6 +68,22 @@
                 object-fit: cover;
                 width: 100%;
                 height: 300px;
+
+                @include media-breakpoint-up(sm) {
+                    height: 500px;
+                }
+
+                @include media-breakpoint-up(md) {
+                    height: 100%;
+                }
+            }
+
+            .image {
+                background-image: url('images/bienvenu-section-frontpage.jpg');
+                width: 100%;
+                height: 300px;
+                background-size:cover;
+                background-position: center center;
 
                 @include media-breakpoint-up(sm) {
                     height: 500px;
@@ -89,6 +107,9 @@
     }
 
     #services-section {
+
+        padding-bottom: 40px;
+
         .list-items {
             position: relative;
 
@@ -109,7 +130,11 @@
                     &:nth-child(3),
                     &:nth-child(4),
                     &:nth-child(5) {
-                        margin-top: 6rem;
+                        margin-top: $margin-beetween-items-mobile;
+
+                        @include media-breakpoint-up(sm) {
+                            margin-top: $margin-beetween-items;
+                        }
                     }
 
                     @include media-breakpoint-up(sm) {
@@ -124,7 +149,11 @@
                         }
                     }
 
-                    
+                    .item-content {
+                        &__text {
+ 
+                        }
+                    }
                 }
             }
         }
@@ -151,7 +180,7 @@
             object-fit: cover;
             display: none;
 
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(lg) {
                 display: block;
             }
         }
@@ -187,7 +216,11 @@
             .item-review {
 
                 &:nth-child(2) {
-                    margin-top: 4rem;
+                    margin-top: $margin-beetween-items-mobile;
+
+                    @include media-breakpoint-up(md) {
+                        margin-top: $margin-beetween-items;
+                    }
 
                     @include media-breakpoint-up(md) {
                         margin-top: 0;

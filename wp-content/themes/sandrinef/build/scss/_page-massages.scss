@@ -1,159 +1,187 @@
- #page-massages {
-     #services-section {
-         .list-items {
-             .item {
+#page-massages {
+    #header-page {
+        background-image: url('images/header-page-massage.jpg');
+    }
 
-                 padding: 4rem 0;
-                 border-top: 1px solid rgba(0, 0, 0, 0.082);
+    #services-section {
+        .list-items {
+            position: relative;
 
-                 &:first-child {
-                     margin-top: 0;
-                     border-top: none;
+            .grid-dots {
+                top: 0;
+                left: initial;
+                right: 0;
+                transform: translate(23%, -28%);
 
-                 }
+                @include media-breakpoint-up(md) {
+                    transform: translate(83%, -28%);
+                }
 
-                 &:last-child {
-                     margin-bottom: 0;
-                 }
+                @include media-breakpoint-up(lg) {
+                    transform: translate(83%, -80%);
+                }
+            }
 
-                 &:nth-child(2n) {
-                     .item-content {
-                         @include media-breakpoint-up(lg) {
-                             flex-direction: row-reverse;
-                         }
-                     }
-                 }
+            .item {
 
-                 &.not-available {
-                     .btn-not-available {
-                         left: 10px;
-                         right: initial;
-                     }
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+                border-top: 1px solid $grey-border;
 
-                     .item-content {
-                         .item-infos {
+                &:first-child {
+                    margin-top: 0;
+                    padding-top: 0;
+                    border-top: none;
 
-                             &__container-btn {
-                                 display: none;
-                             }
-                         }
-                     }
-                 }
+                }
 
-                 .item-content {
-                    height:100%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
 
-                     @include media-breakpoint-up(md) {
-                         max-width: 450px;
-                     }
+                &:nth-child(2n) {
+                    .item-content {
+                        @include media-breakpoint-up(lg) {
+                            flex-direction: row-reverse;
+                        }
+                    }
+                }
 
-                     @include media-breakpoint-up(lg) {
-                         max-width: initial;
-                         flex-direction: row;
-                     }
+                &.not-available {
+                    .btn-not-available {
+                        left: 10px;
+                        right: initial;
+                    }
 
-                     &__image {
-                         @include media-breakpoint-up(lg) {
-                             width: 280px;
-                             height: 240px;
+                    .item-content {
+                        .item-infos {
 
-                         }
-                     }
+                            &__container-btn {
+                                display: none;
+                            }
+                        }
+                    }
+                }
 
-                     .item-infos {
+                .item-content {
+                    height: 100%;
 
-                         display: flex;
-                         flex-direction: column;
-                         padding: 10px 40px;
-                         position: relative;
-                         width: 100%;
-                         justify-content: center;
-                         height:100%;
+                    @include media-breakpoint-up(md) {
+                        max-width: 450px;
+                    }
 
-                         &__title {
-                             font-family: $font-family-sans-serif;
-                             font-size: 1.2rem;
-                             font-weight: 600;
-                             margin-top: 2.5rem;
-                             text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        max-width: initial;
+                        flex-direction: row;
+                    }
 
-                             @include media-breakpoint-up(lg) {
-                                 text-align: initial;
-                                 margin-top: 0rem;
+                    &__image {
+                        @include media-breakpoint-up(lg) {
+                            width: 280px;
+                            height: 240px;
 
-                             }
+                        }
+                    }
 
+                    .item-infos {
 
-                         }
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px 10px;
+                        position: relative;
+                        width: 100%;
+                        justify-content: center;
+                        height: 100%;
 
-                         &__text {
-                             text-align: center;
-                             margin-top: 2rem;
+                        @include media-breakpoint-up(md) {
+                            padding: 10px 40px;
 
-                             @include media-breakpoint-up(lg) {
-                                 text-align: initial;
-                             }
-                         }
+                        }
 
-                         &__list-duration {
-                             display: flex;
-                             justify-content: center;
-                             margin-top: 1.5rem;
+                        &__title {
+                            font-family: $font-family-sans-serif;
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            margin-top: 2.5rem;
+                            text-align: center;
 
-                             @include media-breakpoint-up(lg) {
+                            @include media-breakpoint-up(lg) {
+                                text-align: initial;
+                                margin-top: 0rem;
 
-                                 justify-content: initial;
-
-                             }
-
-                             .item-duration {
-                                 margin: 0 5px;
-                                 font-size: .9rem;
-                             }
-
-
-                         }
-
-                         &__price-container {
-                             text-align: center;
-                             margin-top: .8rem;
-
-                             @include media-breakpoint-up(lg) {
-
-                                 text-align: initial;
-
-                             }
-                         }
-
-                         &__container-btn {
-                             margin-top: 2rem;
-
-                             @include media-breakpoint-up(lg) {
-                                 margin-top: 0;
-                             }
+                            }
 
 
-                             .btn {
-                                 display: inline-block;
+                        }
 
-                                 @include media-breakpoint-up(lg) {
-                                     position: absolute;
-                                     right: 40px;
-                                     bottom: 10px;
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }
-         }
-     }
+                        &__text {
+                            text-align: center;
+                            margin-top: 2rem;
 
-     #shop-section {
-         background-image: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 55%, rgba(255,255,255,0) 100%),
-         url('images/shop-section.jpg');
-         background-size: cover;
-     } 
+                            @include media-breakpoint-up(lg) {
+                                text-align: initial;
+                            }
+                        }
 
-    
- }
+                        &__list-duration {
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 1.5rem;
+
+                            @include media-breakpoint-up(lg) {
+
+                                justify-content: initial;
+
+                            }
+
+                            .item-duration {
+                                margin: 0 5px;
+                                font-size: .9rem;
+                            }
+
+
+                        }
+
+                        &__price-container {
+                            text-align: center;
+                            margin-top: 1.5rem;
+
+                            @include media-breakpoint-up(lg) {
+
+                                text-align: initial;
+
+                            }
+                        }
+
+                        &__container-btn {
+                            margin-top: 2rem;
+
+                            @include media-breakpoint-up(lg) {
+                                margin-top: 0;
+                            }
+
+
+                            .btn {
+                                display: inline-block;
+
+                                @include media-breakpoint-up(lg) {
+                                    position: absolute;
+                                    right: 40px;
+                                    bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #shop-section {
+        background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 55%, rgba(255, 255, 255, 0) 100%),
+            url('images/shop-section.jpg');
+        background-size: cover;
+    }
+
+
+}

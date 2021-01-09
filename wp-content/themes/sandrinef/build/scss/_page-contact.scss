@@ -1,0 +1,105 @@
+#page-contactez-moi {
+    #header-page {
+        background-image: url('images/header-page-contactez-moi.jpg');
+
+    }
+
+    #contact-section {
+        .container-informations-contact {
+            margin-top: 5rem;
+
+            .col-informations-contact {
+                .title-horaire {
+                    margin-top: 4rem;
+                }
+
+                .text {
+                    margin-top: 2rem;
+                }
+
+                .list-contact {
+                    margin-top: 2rem;
+
+                    .item-contact {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 1rem;
+
+                        &:first-child {
+                            margin-top: 0;
+
+                        }
+
+                        .container-icon {
+                            background: $action;
+                            border-radius: 50%;
+                            padding: 6px;
+                            margin-right: 1rem;
+
+                            svg {
+                                color: $white;
+                                height: 12px;
+                                width: 12px;
+                            }
+                        }
+
+                        span {
+                            font-family: $font-family-text;
+                            font-size: 1.2rem;
+                            color: $black-font;
+                        }
+                    }
+                }
+
+                .container-horaires {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+
+                    @include media-breakpoint-between(sm, lg) {
+                       width:70%;
+    
+                    }
+
+                    .horaire-item {
+                        display: flex;
+                        flex-direction: column;
+
+                        span {
+                            font-family: $font-family-text;
+                            font-size: 1.2rem;
+                            color: $black-font;
+                        }
+                    }
+                }
+            }
+
+            .col-form {
+                margin-top: 5rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 0;
+
+                }
+
+                .container-form {
+                    position: relative;
+
+                    .grid-dots {
+
+                        transform: translate(-29%, -100%);
+                    }
+                }
+
+            }
+        }
+    }
+
+    #map-section {
+        padding: 0;
+
+        #container-map {
+            height: 300px;
+        }
+    }
+}

@@ -8,8 +8,11 @@
 
 ///////////////
 //GLOBAL
-/////////////
+//////////////
 
+html,body {
+    height:100%;
+}
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +34,7 @@ body.stop-transitions * {
 
 ul {
     padding: 0;
+    margin: 0;
 
     li {
         list-style: none;
@@ -87,7 +91,7 @@ span {
         height: 100%;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.671);
+        background: $action-opacity;
     }
 
     .container-content-header {
@@ -98,12 +102,23 @@ span {
 
 
     &#header-page {
-        height: 350px;
+
+        height: 270px;
+
+        @include media-breakpoint-up(md) {
+
+            height: 350px;
+        }
 
         .content-header__title {
             color: $white;
             font-family: $font-family-text;
-            font-size: 4rem;
+            font-size: 3rem;
+
+            @include media-breakpoint-up(md) {
+
+                font-size: 4rem;
+            }
         }
     }
 }
@@ -112,9 +127,14 @@ span {
 // SECTION
 ///////////////////////
 .section {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
 
     &__title {
         font-family: $font-family-title;
@@ -132,7 +152,7 @@ span {
         margin-left: auto;
         margin-right: auto;
         display: block;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 
     h3 {
@@ -243,14 +263,15 @@ span {
 
 // BTN
 
-.container-btn {
+.container-btn,
+.wpforms-submit-container {
     display: flex;
     justify-content: center;
 }
 
 .btn {
-    background: $action;
-    border-radius: 7px;
+    background-color: $action !important;
+    border-radius: 7px !important;
     color: white !important;
     padding: 12px 20px;
     display: inline-block;
@@ -265,7 +286,7 @@ span {
     }
 
     &__light {
-        background: $primary;
+        background: $primary !important;
         color: $action !important;
     }
 
@@ -278,17 +299,21 @@ span {
 // BADGE
 
 .badge {
-    background:$primary;
+    background: $primary;
     font-family: $font-family-text;
-    padding:5px 20px;
-    border-radius:50px;
+    padding: 5px 20px;
+    border-radius: 50px;
 }
 
 // ITEM
 .list-items {
 
-    margin-top: 5rem;
+    margin-top: $margin-top-between-content-section-mobile;
 
+    @include media-breakpoint-up(dm) {
+        margin-top: $margin-top-between-content-section;
+
+    }
     .row {
         justify-content: center;
 
@@ -296,6 +321,8 @@ span {
 
             padding-left: 20px;
             padding-right: 20px;
+
+            
 
             &.not-available {
                 opacity: .6;
@@ -373,8 +400,19 @@ span {
 
                 &__container-btn {
                     margin-top: 2.5rem;
+                    margin-bottom:2rem;
                 }
             }
         }
     }
+}
+
+
+//////////
+// FORM
+//////////@extend
+input,
+textarea {
+    background: $grey !important;
+    border-color: $grey-border !important;
 }

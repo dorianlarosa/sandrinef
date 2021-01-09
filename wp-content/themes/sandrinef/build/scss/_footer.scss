@@ -1,6 +1,8 @@
 .footer {
+    overflow: hidden;
     padding-top: 110px;
     position: relative;
+    padding-bottom:20px;
 
     &__logo-container {
         display: flex;
@@ -111,6 +113,10 @@
                         }
                     }
 
+                    a {
+                        font-family: $font-family-text;
+                    }
+
                 }
             }
 
@@ -120,7 +126,7 @@
     .grid-dots {
         bottom: 0;
         left: 0;
-        transform: translate(-47%, 23%);
+        transform: translate(-47%, 34%);
         opacity: 0;
 
         @include media-breakpoint-up(md) {
